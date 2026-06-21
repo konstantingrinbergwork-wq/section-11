@@ -3552,7 +3552,7 @@ class IntervalsSync:
         completed_dates = set()
         
         for activity in activities:
-            date_str =(activity.get("date") or activity.get("start_date_local") or "")[:10]
+            date_str = (activity.get("date") or activity.get("start_date_local") or "")[:10]
             if date_str:
                 completed_dates.add(date_str)
         
