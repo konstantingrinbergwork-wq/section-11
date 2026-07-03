@@ -779,7 +779,7 @@ class IntervalsSync:
             return {}
         
         lookup = {}
-       for act in (data.get("recent_activities") or []):
+        for act in (data.get("recent_activities") or []):
             act_id = act.get("id")
             if act_id is None:
                 continue
