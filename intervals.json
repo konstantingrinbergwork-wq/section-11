@@ -1,0 +1,347 @@
+{
+  "generated_at": "2026-07-03T13:21:37.438615",
+  "version": "3.112",
+  "script_hash": "d8bd9d2c8014",
+  "scan_hours": 72,
+  "retention_days": 14,
+  "activities": [
+    {
+      "activity_id": "i162371836",
+      "date": "2026-07-01",
+      "type": "Run",
+      "name": "Quan Ngu Hanh Son - 3\u041d/\u041a\u041f/16*400/1.07",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 4823,
+          "avg_power": 302,
+          "max_power": 607,
+          "avg_hr": 150,
+          "max_hr": 185,
+          "avg_cadence": 79.136665,
+          "zone": 1,
+          "training_load": 47.3544,
+          "decoupling": 19.75003
+        }
+      ]
+    },
+    {
+      "activity_id": "i162371829",
+      "date": "2026-07-01",
+      "type": "Swim",
+      "name": "\u041f\u043b\u0430\u0432. \u0432 \u0431\u0430\u0441.",
+      "interval_summary": [
+        "7x 28m 104bpm",
+        "4x 37m 115bpm",
+        "2x 25m 108bpm",
+        "1x 25m 108bpm",
+        "1x 50m 125bpm",
+        "1x 75m 110bpm",
+        "1x 25m 96bpm"
+      ],
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 30,
+          "avg_hr": 75,
+          "max_hr": 83,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 44,
+          "avg_hr": 95,
+          "max_hr": 112,
+          "avg_cadence": 26.386364,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 61,
+          "avg_hr": 98,
+          "max_hr": 114,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 48,
+          "avg_hr": 97,
+          "max_hr": 112,
+          "avg_cadence": 26.4375,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 10,
+          "avg_hr": 109,
+          "max_hr": 111,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 45,
+          "avg_hr": 112,
+          "max_hr": 118,
+          "avg_cadence": 24.311111,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 16,
+          "avg_hr": 118,
+          "max_hr": 122,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "74s@115bpm23rpm",
+          "duration_secs": 74,
+          "avg_hr": 115,
+          "max_hr": 122,
+          "avg_cadence": 20.864864,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 74,
+          "avg_hr": 99,
+          "max_hr": 115,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "39s@108bpm26rpm",
+          "duration_secs": 37,
+          "avg_hr": 107,
+          "max_hr": 125,
+          "avg_cadence": 24.324324,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 85,
+          "avg_hr": 105,
+          "max_hr": 119,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "62s@108bpm27rpm",
+          "duration_secs": 62,
+          "avg_hr": 108,
+          "max_hr": 120,
+          "avg_cadence": 26.564516,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 93,
+          "avg_hr": 99,
+          "max_hr": 112,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 46,
+          "avg_hr": 106,
+          "max_hr": 122,
+          "avg_cadence": 11.73913,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 90,
+          "avg_hr": 104,
+          "max_hr": 128,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 45,
+          "avg_hr": 109,
+          "max_hr": 130,
+          "avg_cadence": 24.444445,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 337,
+          "avg_hr": 94,
+          "max_hr": 126,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 45,
+          "avg_hr": 109,
+          "max_hr": 131,
+          "avg_cadence": 22.48889,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 13,
+          "avg_hr": 127,
+          "max_hr": 130,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "50s@125bpm22rpm",
+          "duration_secs": 50,
+          "avg_hr": 125,
+          "max_hr": 129,
+          "avg_cadence": 22.0,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 73,
+          "avg_hr": 104,
+          "max_hr": 114,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "39s@108bpm26rpm",
+          "duration_secs": 40,
+          "avg_hr": 108,
+          "max_hr": 123,
+          "avg_cadence": 28.275,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 18,
+          "avg_hr": 116,
+          "max_hr": 122,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "74s@115bpm23rpm",
+          "duration_secs": 76,
+          "avg_hr": 109,
+          "max_hr": 114,
+          "avg_cadence": 17.763159,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 158,
+          "avg_hr": 94,
+          "max_hr": 113,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "74s@115bpm23rpm",
+          "duration_secs": 77,
+          "avg_hr": 115,
+          "max_hr": 132,
+          "avg_cadence": 24.987013,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 412,
+          "avg_hr": 94,
+          "max_hr": 119,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "103s@110bpm23rpm",
+          "duration_secs": 103,
+          "avg_hr": 110,
+          "max_hr": 131,
+          "avg_cadence": 23.485437,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 158,
+          "avg_hr": 101,
+          "max_hr": 116,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "37s@96bpm29rpm",
+          "duration_secs": 37,
+          "avg_hr": 96,
+          "max_hr": 114,
+          "avg_cadence": 29.18919,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 246,
+          "avg_hr": 93,
+          "max_hr": 118,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "45s@104bpm23rpm",
+          "duration_secs": 42,
+          "avg_hr": 97,
+          "max_hr": 119,
+          "avg_cadence": 26.357143,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 43,
+          "avg_hr": 113,
+          "max_hr": 125,
+          "zone": 1
+        },
+        {
+          "type": "WORK",
+          "label": "74s@115bpm23rpm",
+          "duration_secs": 70,
+          "avg_hr": 119,
+          "max_hr": 135,
+          "avg_cadence": 26.614286,
+          "zone": 1
+        },
+        {
+          "type": "RECOVERY",
+          "duration_secs": 28,
+          "avg_hr": 117,
+          "max_hr": 132,
+          "zone": 1
+        }
+      ]
+    },
+    {
+      "activity_id": "i162371804",
+      "date": "2026-06-29",
+      "type": "Run",
+      "name": "Quan Ngu Hanh Son \u0411\u0435\u0433",
+      "interval_summary": null,
+      "intervals": [
+        {
+          "type": "RECOVERY",
+          "duration_secs": 4163,
+          "avg_power": 312,
+          "max_power": 398,
+          "avg_hr": 142,
+          "max_hr": 153,
+          "avg_cadence": 84.51033,
+          "zone": 1,
+          "training_load": 31.367657,
+          "decoupling": 5.3421974
+        }
+      ]
+    }
+  ]
+}
