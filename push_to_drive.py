@@ -1,39 +1,55 @@
 """
 push_to_drive.py
 
-Uploads (creates or updates) a local file into a specific Google Drive folder
-using a service account. Designed to run as a step in GitHub Actions right
-after sync.py produces latest.json.
+Uploads (creates or updates) a local file into a specific Google Drive folder,
+authenticating as the folder owner via OAuth refresh token (NOT a service
+account -- service accounts have no storage quota on personal "My Drive").
 
 Required environment variables:
-  GOOGLE_SERVICE_ACCOUNT_JSON  - full JSON key of the service account (as text)
-  DRIVE_FOLDER_ID              - target Drive folder ID (the one shared with
-                                  the service account's client_email as Editor)
+  GOOGLE_OAUTH_CLIENT_ID
+  GOOGLE_OAUTH_CLIENT_SECRET
+  GOOGLE_OAUTH_REFRESH_TOKEN
+  DRIVE_FOLDER_ID
 
 Usage:
   python push_to_drive.py latest.json
   python push_to_drive.py latest.json --name training_data.json
 """
 import argparse
-import json
 import os
 import sys
 
-from google.oauth2 import service_account
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 SCOPES = ["https://www.googleapis.com/auth/drive.file"]
+TOKEN_URI = "https://oauth2.googleapis.com/token"
 
 
 def get_drive_service():
-    creds_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
-    if not creds_json:
-        print("ERROR: GOOGLE_SERVICE_ACCOUNT_JSON env var not set", file=sys.stderr)
+    client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
+    client_secret = os.environ.get("GOOGLE_OAUTH_CLIENT_SECRET")
+    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN")
+
+    missing = [
+        name for name, val in [
+            ("GOOGLE_OAUTH_CLIENT_ID", client_id),
+            ("GOOGLE_OAUTH_CLIENT_SECRET", client_secret),
+            ("GOOGLE_OAUTH_REFRESH_TOKEN", refresh_token),
+        ] if not val
+    ]
+    if missing:
+        print(f"ERROR: missing env vars: {', '.join(missing)}", file=sys.stderr)
         sys.exit(1)
-    info = json.loads(creds_json)
-    credentials = service_account.Credentials.from_service_account_info(
-        info, scopes=SCOPES
+
+    credentials = Credentials(
+        token=None,
+        refresh_token=refresh_token,
+        client_id=client_id,
+        client_secret=client_secret,
+        token_uri=TOKEN_URI,
+        scopes=SCOPES,
     )
     return build("drive", "v3", credentials=credentials)
 
