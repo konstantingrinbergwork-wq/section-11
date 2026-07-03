@@ -779,7 +779,7 @@ class IntervalsSync:
             return {}
         
         lookup = {}
-        for act in data.get("recent_activities", []):
+       for act in (data.get("recent_activities") or []):
             act_id = act.get("id")
             if act_id is None:
                 continue
@@ -1382,7 +1382,7 @@ class IntervalsSync:
         
         # Build lookup of cached attachment_id → terrain entry
         cached_by_attachment = {}
-        for entry in cached.get("events", []):
+        for entry in (cached.get("events") or []):
             aid = entry.get("attachment_id")
             if aid:
                 cached_by_attachment[aid] = entry
@@ -2079,7 +2079,7 @@ class IntervalsSync:
         Extract eFTP, W', P-max from wellness.sportInfo.
         These are the accurate live estimates that match the Intervals.icu UI.
         """
-        sport_info = wellness_data.get("sportInfo", [])
+        sport_info = wellness_data.get("sportInfo") or []
         
         # Find cycling sport info
         cycling_info = None
@@ -2760,8 +2760,8 @@ class IntervalsSync:
         """
         candidates: dict[str, tuple[dict, int, str]] = {}
 
-        for sport in athlete.get("sportSettings", []):
-            for sport_type in sport.get("types", []):
+        for sport in (athlete.get("sportSettings") or []):
+    for sport_type in (sport.get("types") or []):
                 family = self.SPORT_FAMILIES.get(sport_type)
                 if not family:
                     continue
@@ -4598,7 +4598,7 @@ class IntervalsSync:
         intervals_data = getattr(self, "_intervals_data", None)
         if not intervals_data:
             return None
-        activities = intervals_data.get("activities", [])
+        activities = intervals_data.get("activities") or []
         # Keep only activities with a dfa block (i.e. AlphaHRV recorded), most recent first
         dfa_activities = [a for a in activities if a.get("dfa") is not None]
         if not dfa_activities:
@@ -7654,7 +7654,7 @@ class IntervalsSync:
             return
         
         # Build issue body
-        changes = changelog.get("changes", [])
+        changes = changelog.get("changes") or []
         body = f"## Section 11 Update Available\n\n"
         body += f"**Notification ID:** {notification_id}\n\n"
         body += "### Changes:\n"
@@ -9201,7 +9201,7 @@ def do_generate_manifest():
         try:
             with open(manifest_path, 'r') as f:
                 old_manifest = json.load(f)
-            for path, info in old_manifest.get("files", {}).items():
+            for path, info in (old_manifest.get("files") or {}).items():
                 desc = info.get("description")
                 if desc:
                     existing_descriptions[path] = desc
