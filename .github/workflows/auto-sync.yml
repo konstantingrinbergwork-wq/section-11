@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests google-api-python-client google-auth
 
       - name: Verify sync.py exists
         run: |
@@ -87,6 +87,13 @@ jobs:
             echo "❌ latest.json not found"
             exit 1
           fi
+      - name: Push latest.json to Google Drive
+        if: success()
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+        run: |
+          python push_to_drive.py latest.json
 
       - name: Archive latest.json with timestamp
         if: success()
