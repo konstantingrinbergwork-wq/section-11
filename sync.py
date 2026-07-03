@@ -2761,7 +2761,7 @@ class IntervalsSync:
         candidates: dict[str, tuple[dict, int, str]] = {}
 
         for sport in (athlete.get("sportSettings") or []):
-    for sport_type in (sport.get("types") or []):
+            for sport_type in (sport.get("types") or []):
                 family = self.SPORT_FAMILIES.get(sport_type)
                 if not family:
                     continue
