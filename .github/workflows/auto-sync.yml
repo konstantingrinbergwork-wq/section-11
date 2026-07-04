@@ -96,6 +96,12 @@ jobs:
           DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
         run: |
           python push_to_drive.py latest.json
+          if [ -f history.json ]; then
+            python push_to_drive.py history.json
+          fi
+          if [ -f intervals.json ]; then
+            python push_to_drive.py intervals.json
+          fi
 
       - name: Archive latest.json with timestamp
         if: success()
