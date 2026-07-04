@@ -2692,6 +2692,13 @@ class IntervalsSync:
                     },
                     "resting_hr": latest_wellness.get("restingHR") or athlete.get("icu_resting_hr"),
                     "hrv": latest_wellness.get("hrv"),
+                    "hrv_sdnn": latest_wellness.get("hrvSDNN"),
+                    "spo2": latest_wellness.get("spO2"),
+                    "respiration": latest_wellness.get("respiration"),
+                    "readiness": latest_wellness.get("readiness"),
+                    "steps": latest_wellness.get("steps"),
+                    "avg_sleeping_hr": latest_wellness.get("avgSleepingHR"),
+                    "wellness_comments": latest_wellness.get("comments"),
                     "sleep_quality": latest_wellness.get("sleepQuality"),
                     "sleep_hours": round(latest_wellness.get("sleepSecs", 0) / 3600, 2) if latest_wellness.get("sleepSecs") else None,
                     "sleep_formatted": self._format_duration(int(latest_wellness.get("sleepSecs", 0)) // 60 * 60) if latest_wellness.get("sleepSecs") else None,
@@ -7838,6 +7845,8 @@ class IntervalsSync:
                 "decoupling": decoupling,
                 "efficiency_factor": act.get("icu_efficiency_factor"),
                 "hrrc": raw_hrrc,
+                "avg_stride_m": act.get("average_stride"),
+                "session_rpe": act.get("session_rpe"),
                 "elevation_m": elevation_m,
                 "display": {
                     # v3.109: display-ready values converted from canonical metric.
